@@ -8,3 +8,4 @@ The Django Advanced course will delve into the details of web programming with P
 <li>Unit and Integration testing</li>
 <li>Building REST services with Django</li>
 <li>Deploying a Django application</li>
+<h1>Certificate and Course Cirriculum</h1>
