@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+    <div class="edit-delete">
+        <h2>Edit Profile</h2>
+        <!-- Start Edit Profile From -->
+        <form action="{% url "edit-profile" pk=request.user.pk %}" method="post">
+            {{ form.as_p }}
+            <!-- Edit Profile Button -->
+            <button class="edit-btn" type="submit">Edit</button>
+            {% csrf_token %}
+        </form>
+        <!-- End Edit Profile Form -->
+
+    </div>
+{% endblock %}

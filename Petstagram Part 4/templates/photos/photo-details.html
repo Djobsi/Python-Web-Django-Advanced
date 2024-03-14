@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="col-9">
+            {% include 'partials/pet_photo_list_item.html' with photo=object %}
+
+            <p class="pet-details">{{ object.description }}</p>
+
+            <h5 class="postTime">{{ object.date_of_publication }}</h5>
+
+            <div class="comments">
+                {% for comment in object.photocomment_set.all %}
+                    <div class="top">
+                        <div class="userDetails">
+                            <div class="comment-data">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/person.png' %}" alt="img8">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <a href="{% url 'details-profile' pk=1 %}">Steven Ivanov</a>
+                                    - {{ comment.text }}
+                                </p>
+                            </div>
+                            <span>{{ comment.date_time_of_publication }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
