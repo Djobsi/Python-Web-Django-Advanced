@@ -1,0 +1,13 @@
+@import '../styles/common';
+
+.listTodos {
+  @extend .list;
+}
+
+.listItemTodos {
+  @extend .listItem;
+}
+
+.box {
+  border-bottom: 1px solid black;
+}
