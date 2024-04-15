@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+    <style>
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #1842ff;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .search-container button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <div class="search-container">
+        <form action="{% url 'search-books' %}" method="GET">
+            <input type="text" name="author" placeholder="Търсене по автор">
+            <button type="submit">Търсене</button>
+        </form>
+    </div>
+
+    <div class="jumbotron">
+        <h1>Добре дошли в Онлайн Магазина за Книги</h1>
+        <p>Разгледайте нашата голяма колекция от книги и намерете следващата си любима книга.</p>
+    </div>
+
+    {% include "books/custom_book.html" %}
+
+{% endblock %}

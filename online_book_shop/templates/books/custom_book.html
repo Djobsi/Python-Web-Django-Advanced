@@ -1,0 +1,17 @@
+<div class="books-wrapper">
+    {% for book in recent_books %}
+        <div class="book-custom-container" style="width: 15%;border: solid 2px #9cbcde; background-color: #dcdcdc;">
+
+            {% if request.user != book.book_owner %}
+                <a style="height: 28px;" href="{% url "add-to-cart-page" pk=book.pk %}" class="buy-button">Купи</a>
+            {% endif %}
+
+            <div class="book-custom-details">
+                <h2>Автор: {{ book.author }}</h2>
+                <hr>
+                <img src="{{ book.cover }}" alt="{{ book.title }}">
+                <a href="{% url 'details-book-page' pk=book.pk %}">Научи повече</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

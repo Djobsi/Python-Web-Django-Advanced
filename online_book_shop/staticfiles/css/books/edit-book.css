@@ -1,0 +1,46 @@
+/* Container for the edit book form */
+.edit-book-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #9cbcde;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2%;
+}
+
+/* Style for form elements */
+.edit-book-form input[type="text"],
+.edit-book-form textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Style for file input */
+.edit-book-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for submit button */
+.edit-book-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-book-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,25 @@
+{#{% extends "base.html" %}#}
+{#{% block main_content %}#}
+{#    <div class="login-register-box">#}
+{#        <h1>Register</h1>#}
+{#        <form action="{% url "register-page" %}" method="post" class="registration-form">#}
+{#            {{ form.as_p }}#}
+{#            <button type="submit" class="btn">Register</button>#}
+{#            {% csrf_token %}#}
+{#        </form>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="login-register-box" style="border: solid 10px #9cbcde; background-color: #dcdcdc;">
+        <h1>Регистриране</h1>
+        <form action="{% url "register-page" %}" method="post" class="registration-form">
+            {{ form.as_p }}
+            <button type="submit" class="btn">Регистриране</button>
+            {% csrf_token %}
+        </form>
+        <p>Имаш акаунт? <a href="{% url 'login-page' %}">Влизане</a></p>
+    </div>
+{% endblock %}

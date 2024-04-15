@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="edit-user" style="margin-bottom: 20px; border: solid 10px #9cbcde; background-color: #dcdcdc;">
+    <h1>Редактирай</h1>
+    <form action="{% url "edit-page" pk=user.pk %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {#            Email: <p style="box-sizing: border-box; background-color: white; width: 50%; margin-bottom: 15px;  border-radius: 3px; border: 1px solid #ccc;">{{ user.email }}</p>#}
+        {{ form.as_p }}
+        <button style="background-color: #4CAF50; border: solid 1px white; border-radius: 10px;" type="submit">Запази</button>
+        <a style="border: solid 1px white; border-radius: 10px;" href="{% url 'details-page' pk=user.pk %}" class="back-btn">Към профила</a>
+    </form>
+    </div>
+{% endblock %}

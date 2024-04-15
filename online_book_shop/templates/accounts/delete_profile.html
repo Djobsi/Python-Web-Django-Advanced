@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+
+    <div class="delete-profile"
+         style="margin-bottom: 20px; margin-top: 20px; border: solid 10px #9cbcde; background-color: #dcdcdc;">
+        <h1>
+
+            Сигурни ли сте, че искате да изтриете своя профил?
+        </h1>
+        <form method="post" action="{% url 'delete-page' pk=user.pk %}">
+            {% csrf_token %}
+            <div class="sure-buttons">
+                <button type="submit">Да</button>
+                <a style="border-radius: 10px" class="edit-btn" href="javascript:history.back()">Върни се назад</a>
+            </div>
+        </form>
+        <img src="{% static '/images/are-you-sure-cat.gif' %}" alt="are you sure cat gif">
+    </div>
+
+{% endblock %}

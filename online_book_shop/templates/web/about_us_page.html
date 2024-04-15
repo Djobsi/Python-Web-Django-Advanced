@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+    <style>
+        .about-us {
+            padding: 50px 0;
+            color: #333;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #bebebe;
+        }
+
+        .container ul {
+            margin-bottom: 25px;
+            color: #bebebe;
+            margin-left: 3%;
+        }
+
+        .container h3 {
+            margin-bottom: 20px;
+            color: #bebebe;
+        }
+
+        .container .para {
+            margin-bottom: 25px;
+            color: #bebebe;
+            margin-left: 2%;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .image-container img {
+            width: 40%;
+            height: auto;
+            margin-left: 30px;
+            margin-right: 30px;
+            border: 5px solid gray; /* Gray */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+    </style>
+
+    <section class="about-us">
+        <div class="container-about">
+            <h2>За нас</h2>
+            <p class="para">Добре дошли в онлайн книжарница "Изток към Запад"! Ние сме вашата врата към изключителния свят на литературата, където всяка страница е пътешествие и всяка дума е приказка. Нашата мисия е да ви предложим не просто книги, а вълнуващи приключения, невероятни открития и неизброими емоции.</p>
+
+            <h3>Нашата мисия</h3>
+            <p>В "Изток към Запад" ние вярваме, че книгите имат силата да променят света. Нашата мисия е да ви предоставим лесен и удобен начин за достъп до богатото разнообразие от книги от целия свят. Ние се стремим да вдъхновяваме, да обогатяваме и да разширяваме вашия литературен свят, предлагайки ви само най-доброто от съвременната и класическа литература.</p>
+
+            <h3>Защо да ни изберете?</h3>
+            <ul>
+                <li>Широка гама от книги за всеки вкус и интерес</li>
+                <li>Лесно и удобно пазаруване с един клик</li>
+                <li>Бърза доставка до вашия дом или офис</li>
+                <li>Професионално обслужване и подкрепа от нашия екип</li>
+            </ul>
+
+            <div class="image-container">
+                <img src="{% static "images/booksop1.jpg" %}">
+                <img src="{% static "images/booksop3.jpg" %}">
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+    <style>
+        .contact {
+            padding: 50px 0;
+        }
+
+        /* Container for the form */
+        .container-co {
+            max-width: 30%;
+            background-color: #dcdcdc;
+            margin: 0 auto;
+            padding: 15px;
+            border: solid 10px #9cbcde;
+            border-radius: 10px;
+        }
+
+        /* Style for form headings */
+        .container-co h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for form fields */
+        .container-co label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container-co input[type="text"],
+        .container-co textarea {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Style for submit button */
+        .container-co button[type="submit"] {
+            display: inline-block;
+            width: 50%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container-co button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <section style="padding: 50px 0;" class="contact">
+        <div class="container-co">
+            <h2>Контакт с нас</h2>
+            <hr>
+            <form action="{% url 'contact-us-page' %}" method="post">
+                {{ form.as_p }}
+
+                <button type="submit" class="btn">Изпрати</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </section>
+{% endblock %}

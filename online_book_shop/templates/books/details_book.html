@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div style="border: solid 10px #9cbcde; background-color: #dcdcdc;" class="book-details">
+        <h1>{{ book.author }}</h1>
+        <hr>
+        <img src="{{ book.cover }}" alt="{{ book.title }}">
+        <hr>
+        <p><strong>Заглавие:</strong> {{ book.title }}</p>
+        <p><strong>Жанр:</strong> {{ book.genre }}</p>
+        <p><strong>Описание:</strong> {{ book.description }}</p>
+        <p><strong>Цена:</strong> {{ book.price|floatformat:2 }}$</p>
+        <p><strong>Дата на публикуване:</strong> {{ book.publication_date }}</p>
+        <p><strong>Имейл на създатела:</strong> {{ book.book_owner }}</p>
+
+        {% if user.is_authenticated and book.book_owner.pk == user.pk %}
+            <a style="background-color: #28a745;" href="{% url "edit-book-page" pk=book.pk %}">Редактирай</a>
+            <a style="background-color: red;" href="{% url "delete-book-page" pk=book.pk %}">Изтрий</a>
+        {% endif %}
+    </div>
+{% endblock %}

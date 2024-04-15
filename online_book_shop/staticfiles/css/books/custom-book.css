@@ -1,0 +1,68 @@
+/* Add this style to ensure proper clearing of floats */
+.books-wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Adjusted width to make books smaller */
+.book-custom-container {
+    width: 20%;
+    margin-bottom: 20px;
+    background-color: #9cbcde;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    margin-left: 2.4%;
+    position: relative; /* Add relative positioning */
+}
+
+/* Style for book title */
+.book-custom-details h2 {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Style for book image */
+.book-custom-details img {
+    width: 80%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+}
+
+/* Style for 'Learn More' link */
+.book-custom-details a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.3s;
+}
+
+.book-custom-details a:hover {
+    background-color: #0056b3;
+}
+
+.buy-button {
+    position: absolute; /* Position relative to the container */
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    background-color: #d5d5d5;
+    color: #0031ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.buy-button:hover {
+    background-color: #ffffff;
+}

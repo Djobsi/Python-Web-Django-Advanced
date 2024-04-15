@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+    <div class="profile-details" style="margin-bottom: 20px; border: solid 10px #9cbcde; background-color: #dcdcdc;">
+        <h1>Подробности за профила</h1>
+        <ul>
+            <li><strong>Имейл адрес:</strong> {{ user.email }}</li>
+            <li><strong>Име:</strong> {{ user.profile.first_name }}</li>
+            <li><strong>Фамилия:</strong> {{ user.profile.last_name }}</li>
+            <li><strong>Години:</strong> {{ user.profile.age }}</li>
+            <li><strong>Останали пари:</strong> {{ user.profile.profile_money|floatformat:2 }}$</li>
+
+            {% if user.profile.profile_picture %}
+                <li><img alt="Profile Picture" style="height: 150px; width: 200px; border-radius: 10px;" src="{{ user.profile.profile_picture }}"></li>
+            {% else %}
+                <li><img alt="No Profile Picture" style="height: 150px; width: 200px; border-radius: 10px;" src="{% static "images/no_profile.png" %}"></li>
+            {% endif %}
+        </ul>
+
+        <div class="action-buttons">
+            <a style="border: solid 1px white; border-radius: 10px; background-color: #28a745;" href="{% url 'edit-page' pk=request.user.pk %}" class="edit-btn">Редактирай</a>
+            <a style="border: solid 1px white; border-radius: 10px; background-color: red;" href="{% url 'delete-page' pk=request.user.pk %}" class="delete-btn">Изтрий</a>
+        </div>
+
+    </div>
+{% endblock %}

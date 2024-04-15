@@ -1,0 +1,63 @@
+/* Style for the profile details container */
+.profile-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #9cbcde;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.profile-details h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for the profile details list */
+.profile-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details ul li {
+    margin-bottom: 10px;
+}
+
+.profile-details ul li strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Style for the action buttons */
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.action-buttons a {
+    display: inline-block;
+    padding: 1px 50px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Style specifically for the edit button */
+.edit-btn {
+    background-color: #28a745; /* Green color */
+}
+
+/* Style specifically for the delete button */
+.delete-btn {
+    background-color: #dc3545; /* Red color */
+}

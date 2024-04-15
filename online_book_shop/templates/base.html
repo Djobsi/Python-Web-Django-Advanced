@@ -1,0 +1,73 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн Магазин за Книги</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="background">
+<nav class="navbar">
+    <div class="nav-container">
+        {% if user.is_authenticated %}
+            <div style="margin-left: -40%;" class="nav-left">
+               | <a href="{% url "view-cart-page" %}"><img style="width: 40px;height: auto;"
+                                                          src="{% static "images/cart-logo.png" %}" alt="Cart"
+                                                          class="cart-logo"></a> |
+                <a href="{% url "home-page" %}">Начало</a> |
+                <a href="{% url "about-us-page" %}">За нас</a> |
+                <a href="{% url "create-books" %}">Създай книга</a> |
+            </div>
+
+            <div class="nav-right">
+               | <a href="{% url "details-page" pk=user.pk %}">Профил</a> |
+                <a href="{% url "logout-page" %}">Излизане</a> |
+                {% if user.is_superuser or user.is_staff %}
+                     <a href="{% url "admin:index" %}">Админ</a> |
+                {% endif %}
+            </div>
+
+        {% else %}
+            <div class="nav-left2" style="margin-left: 10%;">
+                | <a href="{% url "home-page" %}">Начало</a> |
+                <a href="{% url "about-us-page" %}">За нас</a> |
+                <a href="{% url "contact-us-page" %}">Контакти</a> |
+            </div>
+
+            <div class="nav-right2" style="margin-right: 10%;">
+                | <a href="{% url "register-page" %}">Регистриране</a> |
+                <a href="{% url "login-page" %}">Влизане</a> |
+            </div>
+
+        {% endif %}
+
+    </div>
+</nav>
+
+{% block main_content %}
+{% endblock %}
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Свържете се с нас:</h3>
+                <p><img src="{% static 'images/email.png' %}" alt="Email Icon"> Имейл адрес: top.clean@gmail.com</p>
+                <p><img src="{% static 'images/phone_number.png' %}" alt="Phone Number Icon"> Тел. номер: +359 87 680 8889</p>
+                <p><img src="{% static 'images/adress.png' %}" alt="Adress Icon"> Адрес: ул. Христо Смирненски 42, 2814 Ново Делчево</p>
+            </div>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117147.48096798317!2d23.2837936!3d41.5064231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aa2d0ee5daca1b%3A0x1666da0464a8afcf!2s%D0%A2%D0%BE%D0%BF%20%D0%9A%D0%BB%D0%B8%D0%B9%D0%BD!5e0!3m2!1sen!2sbg!4v1648594282850!5m2!1sen!2sbg" width="350" height="250" style="border: 7px solid #ffffff; border-radius: 8px;" loading="lazy"></iframe>
+            </div>
+            <div class="footer-logo">
+                <img src="{% static 'images/book-shop-logo.png' %}" alt="Company Logo">
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

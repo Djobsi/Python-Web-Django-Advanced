@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+    <div class="login-box" style="margin-top: 2%; margin-bottom: 10px; background-color: #dcdcdc; border: solid 10px #9cbcde;">
+        <h1>Login</h1>
+
+        <form style="width: 70%; display: inline-block;" action="{% url "login-page" %}" method="post" class="login-form">
+            {{ form }}
+            <button type="submit" class="log-btn">Влизане</button>
+
+            {% csrf_token %}
+
+        </form>
+
+        <p>Нямаш акаунт? <a href="{% url 'register-page' %}">Регистриране</a></p>
+    </div>
+
+{% endblock %}

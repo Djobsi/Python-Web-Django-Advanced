@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <h2>Резултати:</h2>
+    <div class="books-wrapper">
+        {% for book in books %}
+            <div class="book-custom-container" style="width: 15%;border: solid 2px #9cbcde; background-color: #dcdcdc;">
+                <div class="book-custom-details">
+                    <h2>Автор: {{ book.author }}</h2>
+                    <hr>
+                    <img src="{{ book.cover }}" alt="{{ book.title }}">
+                    <a href="{% url 'details-book-page' pk=book.pk %}">Научи повече</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

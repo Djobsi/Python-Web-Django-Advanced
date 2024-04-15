@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+
+    <style>
+        .checkout {
+            width: 30%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 10px solid #9cbcde;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #dcdcdc;
+        }
+
+        .checkout h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cart-items ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .cart-items ul li {
+            margin-bottom: 10px;
+        }
+
+        .total p {
+            font-weight: bold;
+        }
+
+        .checkout-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <div class="checkout">
+        <h1>Продължете към плащане</h1>
+
+        <div class="cart-items">
+            <ul>
+                <hr>
+                {% for item in cart_items %}
+                    <li>{{ item.title }} - ${{ item.price|floatformat:2 }}</li>
+                    <hr>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="total">
+            <p>Крайна цена: ${{ total_price|floatformat:2 }}</p>
+        </div>
+
+        {% if profile.profile_money < total_price %}
+            <h2>No sufficient funds in your profile!</h2>
+        {% else %}
+            <!-- Checkout form -->
+            <div class="checkout-form">
+                <form action="{% url 'proceed-to-checkout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Потвърди поръчката</button>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
