@@ -14,14 +14,14 @@ class AnonymousUsers(models.Model):
         validators=[MinLengthValidator(MIN_LENGTH_NAME)],
         null=False,
         blank=False,
-        verbose_name="Your name:"
+        verbose_name="Вашите имена:"
     )
 
     from_email = models.EmailField(
         null=False,
         blank=False,
         unique=True,
-        verbose_name="Your email address:"
+        verbose_name="Вашият имейл:"
     )
 
     message = models.TextField(
@@ -31,5 +31,5 @@ class AnonymousUsers(models.Model):
         ],
         null=False,
         blank=False,
-        verbose_name="Your message:"
+        verbose_name="Вашето съобщение:"
     )
