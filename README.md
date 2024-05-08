@@ -9,3 +9,5 @@ The Django Advanced course will delve into the details of web programming with P
 <li>Building REST services with Django</li>
 <li>Deploying a Django application</li>
 <h1>Certificate and Course Cirriculum</h1>
+
+![certificate-django-advanced](https://github.com/Djobsi/Python-Web-Django-Advanced/assets/122883325/1d3e75a0-57ea-4fdd-92c7-bea02f3fdf51)
